@@ -11,4 +11,7 @@ EXPOSE $TSU_QUERY/udp
 ADD Run.sh /home/steam/
 
 USER steam
+
+RUN mkdir -p /home/steam/TSU && chown 1000:1000 /home/steam/TSU
+
 ENTRYPOINT ["/home/steam/Run.sh"]
