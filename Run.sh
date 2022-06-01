@@ -19,9 +19,9 @@ do
     if [ $INSTALL -eq 1 ]
     then
         echo Trying to install server to /home/steam/TSU.
-        cd steamcmd
+#        cd steamcmd
         ./steamcmd.sh +force_install_dir /home/steam/TSU +login anonymous +app_update 1815810 validate +quit
-        cd -
+#        cd -
     fi
     INSTALL=0
 
