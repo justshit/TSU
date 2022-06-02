@@ -5,7 +5,7 @@ The server is installed in /home/steam/TSU and the user inside the container is 
 
 Default ports used by the server are 7755 (server itself) and 7756 (query port). If you want to run multiple servers on one host, you need to define ports that are not overlapping each other. Variable TSU_PORT can be used to change the port, query port will automatically be TSU_PORT+1 (remember to open both of them on the host firewall, server only uses udp). 
 
-Other variables that can and should be used are SERVER_NAME, to give your server a distinct name on the server browser list (default is "TSUinaContainer") and ADMIN_STEAMID for adding rcon possibilities on the server.
+Other variables that can and should be used are SERVER_NAME, to give your server a distinct name on the server browser list (default is "TSUinaContainer") and ADMIN_STEAMID for adding rcon possibilities on the server. Also, if you want to have private fun, use variable DISCOVERY with value "hidden". Server will not bee visible on the in-game browser, but you and your friends can connect with the IP of the host.
 
 If you are interested in adding more maps, backing up config, logs or results, you should definitely map the server's config directory (home/steam/TSU/config) to your host with the switch -v.
 
@@ -18,9 +18,9 @@ examples:
 ```sh
   docker run -d --net=host -e SERVER_NAME='my name' mmvv/tsu_server:latest
 ```
-3) "I want some control on my server!" (still, default port)
+3) "I want some control on my private server!" (still, default port)
 ```sh
-  docker run -d --net=host -e SERVER_NAME='my name' -e ADMIN_STEAMID='steamid' mmvv/tsu_server:latest
+  docker run -d --net=host -e SERVER_NAME='my name' -e ADMIN_STEAMID='steamid' -e DISCOVERY=hidden mmvv/tsu_server:latest
 ```
 4) "I want it all!"
 ```sh
