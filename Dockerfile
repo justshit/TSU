@@ -9,6 +9,7 @@ EXPOSE $TSU_PORT/udp
 EXPOSE $TSU_QUERY/udp
 
 ADD Run.sh /home/steam/
+ADD Quit.sh /home/steam/
 
 USER steam
 
