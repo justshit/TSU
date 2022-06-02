@@ -27,7 +27,7 @@ do
 
     echo Trying to run TSUs.
     cd /home/steam/TSU
-    ./TSUs.x86_64 -name $SERVER_NAME -port $TSU_PORT -admin $ADMIN_STEAMID -$DISCOVER
+    ./TSUs.x86_64 -name $SERVER_NAME -port $TSU_PORT -admin $ADMIN_STEAMID -$DISCOVERY
     EXIT_VALUE=$?
     cd -
 
