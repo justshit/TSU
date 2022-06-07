@@ -13,6 +13,12 @@
 RESTART=1
 INSTALL=1
 
+RELAY_SWITCH=
+if [ "$RELAY" = "true" ]
+then
+    RELAY_SWITCH="-relay"
+fi
+
 while [ $RESTART -eq 1 ]
 do
     RESTART=0
@@ -27,7 +33,7 @@ do
 
     echo Trying to run TSUs.
     cd /home/steam/TSU
-    ./TSUs.x86_64 -name $SERVER_NAME -port $TSU_PORT -admin $ADMIN_STEAMID -$DISCOVERY
+    ./TSUs.x86_64 -name $SERVER_NAME -port $TSU_PORT -admin $ADMIN_STEAMID -$DISCOVERY $RELAY_SWITCH
     EXIT_VALUE=$?
     cd -
 

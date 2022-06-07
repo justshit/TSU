@@ -34,3 +34,7 @@ examples:
 ```sh
   docker exec 'name of my container' /home/steam/Quit.sh
 ```
+7) To run without giving the container access to the host network interface you need to use `relay`-mode and expose the udp ports
+```sh
+  docker run -d -e RELAY=true -p 7755:7755/udp -p 7756:7756/udp mmvv/tsu_server:latest
+```
