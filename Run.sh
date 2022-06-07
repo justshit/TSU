@@ -43,4 +43,4 @@ do
     fi
 done
 
-echo Quit, exit code: $?
+echo Quit, exit code: $EXIT_VALUE
