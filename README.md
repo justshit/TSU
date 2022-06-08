@@ -40,5 +40,5 @@ examples:
 ```
 8) Host a hidden game for a LAN party on an alternative port without giving the container access to the host network interface
 ```sh
-  docker run -d -e SERVER_NAME="TSU LAN server" -e RELAY=false -e DISCOVERY=hidden -e TSU_PORT=7777 -p 7777:7777/udp -p 7778:7778/udp mmvv/tsu_server:latest
+  docker run -d -e SERVER_NAME="TSU LAN server" -e RELAY=false -e DISCOVERY=hidden -p 7777:7755/udp -p 7778:7756/udp mmvv/tsu_server:latest
 ```
