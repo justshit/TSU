@@ -38,11 +38,15 @@ examples:
 ```sh
   docker run -d -p 7755:7755/udp -p 7756:7756/udp mmvv/tsu_server:latest
 ```
+7.1) To run a second public game on the same host you can
+```sh
+  docker run -d -e SERVER_NAME="second_server" -e TSU_PORT=7777 -p 7777:7777/udp -p 7778:7778/udp mmvv/tsu_server:latest
+```
 8) You can use `relay`-mode to run the server e.g. behind a NAT without having to worry about opening ports at your firewall (connect manually using the steam id printed on the server console or add a port forwarding for the query port to show your server in the server browser)
 ```sh
   docker run -d -e RELAY=true -p 7755:7755/udp -p 7756:7756/udp mmvv/tsu_server:latest
 ```
-9) Host a hidden game for a LAN party on an alternative port without giving the container access to the host network interface (connect manually using the host ip address and your exposed port. 7777 in this example)
+9) Host a hidden game for a LAN party on an alternative port without giving the container access to the host network interface (connect manually using the host ip address and your exposed port. 7777 in this example, server browser won't work due to the port mismatch even if you make the server public)
 ```sh
   docker run -d -e SERVER_NAME="TSU LAN server" -e RELAY=false -e DISCOVERY=hidden -p 7777:7755/udp -p 7778:7756/udp mmvv/tsu_server:latest
 ```
